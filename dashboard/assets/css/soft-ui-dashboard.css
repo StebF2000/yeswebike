@@ -4561,9 +4561,7 @@ fieldset:disabled .btn {
 .navbar-brand {
   padding-top: 0.40625rem;
   padding-bottom: 0.40625rem;
-  margin-right: 1rem;
-  font-size: 1.125rem;
-  white-space: nowrap;
+  width: 512px;
 }
 
 .navbar-nav {
