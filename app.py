@@ -1,8 +1,8 @@
 from flask import Flask,render_template
 import sqlite3
 app = Flask(__name__)
-
-
+import os
+import sys
 '''connection = sqlite3.connect('database.db')
 
 
@@ -24,4 +24,10 @@ connection.close()'''
 
 @app.route('/')
 def dashboard():
-    render_template('pages/dashboard.html')
+    #print(os.listdir('dashboard/pages'),file=sys.stderr)
+    return render_template('pages/dashboard.html')
+
+@app.route('/docs')
+def docs():
+    #print(os.listdir('dashboard/pages'),file=sys.stderr)
+    return render_template('docs/documentation.html')
