@@ -1,0 +1,9 @@
+gunicorn
+Flask
+Plotly
+Seaborn
+numpy
+Psycopg2
+postgres
+pandas
+
