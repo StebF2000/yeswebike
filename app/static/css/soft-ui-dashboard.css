@@ -475,8 +475,20 @@ output {
 }
 
 iframe {
-  border: 0;
+  margin: 0;
 }
+
+.iframe-outer {
+    display: inline-block;
+    position: relative;
+}
+
+.iframe-inner {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: absolute;
+}
+
 
 summary {
   display: list-item;
@@ -4561,7 +4573,9 @@ fieldset:disabled .btn {
 .navbar-brand {
   padding-top: 0.40625rem;
   padding-bottom: 0.40625rem;
-  width: 512px;
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  white-space: nowrap;
 }
 
 .navbar-nav {
