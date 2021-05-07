@@ -1,7 +1,7 @@
 echo "Creem taula $1"
 
 
-psql -U user bd -c "CREATE TABLE $1 (
+sudo psql -U root webike -c "CREATE TABLE $1 (
     station_id smallint,
     num_bikes smallint,
     num_bikes_mech smallint,
