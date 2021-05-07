@@ -476,6 +476,7 @@ output {
 
 iframe {
   margin: 0;
+  border: 0;
 }
 
 .iframe-outer {
