@@ -1,8 +1,0 @@
-gunicorn
-Flask
-Plotly
-Seaborn
-numpy
-postgres
-pandas
-
