@@ -18,7 +18,9 @@ services:
               target: /var/lib/postgresql/data
     
     app:
-        image: condapack
+        depends_on: 
+            - db
+        build: docker/
         networks: 
             - yeswebike
         ports: 
