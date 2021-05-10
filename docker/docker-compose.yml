@@ -25,12 +25,12 @@ services:
             - "80:80"
         volumes:
             - type: volume
-              source: data
-              target: /data
+              source: datas
+              target: /data/
     
 networks: 
     yeswebike:
 
 volumes: 
     postgres: {}
-    data: {}
+    datas: {}
