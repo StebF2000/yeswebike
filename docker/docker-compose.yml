@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+    db:
+        image: postgres
+        container_name: postgres-db
+        environment: 
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_DB=postgres
+        networks: 
+            - yeswebike
+        ports: 
+            - "5433:5432"
+        volumes:
+            - type: volume
+              source: postgres
+              target: /var/lib/postgresql/data
+    
+    app:
+        image: condapack
+        networks: 
+            - yeswebike
+        ports: 
+            - "80:80"
+        volumes:
+            - type: volume
+              source: data
+              target: /data
+    
+networks: 
+    yeswebike:
+
+volumes: 
+    postgres: {}
+    data: {}
