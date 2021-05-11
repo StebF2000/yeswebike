@@ -20,7 +20,9 @@ services:
     app:
         depends_on: 
             - db
-        build: docker/
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
         networks: 
             - yeswebike
         ports: 
