@@ -1,0 +1,13 @@
+name: yeswebike
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - pandas
+  - flask
+  - plotly
+  - autopep8
+  - dash
+  - geopandas
+  - dash-bootstrap-components
+  - numpy
