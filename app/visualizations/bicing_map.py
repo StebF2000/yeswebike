@@ -21,11 +21,7 @@ def bare_map(server):
 
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
-    fig.update_layout(font_family="Open Sans", title_font_family="Open Sans")
-
-    dash_app = Dash(server=server, routes_pathname_prefix="/dashapp/", external_stylesheets=[
-        '/static/css/soft-ui-dashboard.css'
-    ])
+    dash_app = Dash(server=server, routes_pathname_prefix="/dashapp/")
 
     dash_app.layout = html.Div(
         id='dash-container', children=[dcc.Graph(figure=fig)])
