@@ -2,6 +2,7 @@ from turtle import window_height
 from click import style
 import plotly.express as px
 import pandas as pd
+import json
 
 from dash import Dash
 import dash_html_components as html
@@ -10,11 +11,14 @@ import dash_core_components as dcc
 
 def bare_map(server):
 
-    bicing = pd.read_csv("data/estacions_bicing.csv")
+    with open("source/data/station_information.json") as json_file:
+        data = json.load(json_file)
 
-    fig = px.scatter_mapbox(bicing, lat="latitude", lon="longitude", hover_name='streetName', hover_data={
-                            'latitude': False, 'longitude': False}, color_discrete_sequence=["red"], zoom=12,
-                            height=700)
+        bicing = pd.DataFrame(data["data"]["stations"])
+
+    fig = px.scatter_mapbox(bicing, lat="lat", lon="lon", hover_name='address', hover_data={
+                            'lat': False, 'lon': False, 'capacity': True, 'altitude': False}, zoom=11.5,
+                            height=700, color_discrete_sequence=['#a64ca0'], opacity=0.9)
 
     fig.update_layout(mapbox_style="carto-positron")
     fig.update_layout(template='plotly_white')

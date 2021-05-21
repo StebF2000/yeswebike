@@ -8,8 +8,6 @@ def init_app():
         from . import routes
 
         from .visualizations.bicing_map import bare_map
-        from .visualizations.table import dash_t
         app = bare_map(app)
-        app = dash_t(app)
 
     return app
