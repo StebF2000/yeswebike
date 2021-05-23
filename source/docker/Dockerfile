@@ -7,7 +7,6 @@ RUN conda env create --file environment.yml nomkl && conda clean -afy && find /o
 
 # Copy data
 COPY app/ data/app/
-COPY estacions_bicing.csv data/data/
 COPY wsgi.py data/
 
 # Activate environement

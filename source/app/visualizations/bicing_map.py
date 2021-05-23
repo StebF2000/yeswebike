@@ -1,5 +1,3 @@
-from turtle import window_height
-from click import style
 import plotly.express as px
 import pandas as pd
 import json
@@ -11,7 +9,7 @@ import dash_core_components as dcc
 
 def bare_map(server):
 
-    with open("source/data/station_information.json") as json_file:
+    with open("source/app/data/station_information.json") as json_file:
         data = json.load(json_file)
 
         bicing = pd.DataFrame(data["data"]["stations"])
@@ -21,7 +19,6 @@ def bare_map(server):
                             height=700, color_discrete_sequence=['#a64ca0'], opacity=0.9)
 
     fig.update_layout(mapbox_style="carto-positron")
-    fig.update_layout(template='plotly_white')
 
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 

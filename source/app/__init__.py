@@ -8,6 +8,9 @@ def init_app():
         from . import routes
 
         from .visualizations.bicing_map import bare_map
+        from .visualizations.centrality_map import centrality_map
+
         app = bare_map(app)
+        app = centrality_map(app)
 
     return app
