@@ -1,9 +1,11 @@
 from crypt import methods
 from email import header
+import flask
 from flask import render_template
 from flask import current_app as app
 import json
 import pandas as pd
+import os
 
 
 def myround(x, base=5):
@@ -57,3 +59,8 @@ def centrality():
 @app.route('/animation')
 def evolution():
     return render_template('animation.html')
+
+
+@app.route('/graph', methods=["GET", "POST"])
+def vizCool():
+    return app.send_static_file("index.html")

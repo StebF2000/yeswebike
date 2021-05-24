@@ -6,16 +6,23 @@ from dash import Dash
 import dash_html_components as html
 import dash_core_components as dcc
 
+from psycopg2 import connect
+import pandas.io.sql as sqlio
+
+
+def read_db(query):
+    conn = connect(
+        "host='10.10.10.1' port='5432' dbname='postgres' user='admin' password='admin'")
+
+    return sqlio.read_sql_query(query, conn)
+
 
 def bare_map(server):
 
-    with open("source/app/data/station_information.json") as json_file:
-        data = json.load(json_file)
+    bicing = read_db("SELECT * FROM estacions")
 
-        bicing = pd.DataFrame(data["data"]["stations"])
-
-    fig = px.scatter_mapbox(bicing, lat="lat", lon="lon", hover_name='address', hover_data={
-                            'lat': False, 'lon': False, 'capacity': True, 'altitude': False}, zoom=11.5,
+    fig = px.scatter_mapbox(bicing, lat="latitud", lon="longitud", hover_name='carrer', hover_data={
+                            'latitud': False, 'longitud': False}, zoom=11.5,
                             height=700, color_discrete_sequence=['#a64ca0'], opacity=0.9)
 
     fig.update_layout(mapbox_style="carto-positron")
