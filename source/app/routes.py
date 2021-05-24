@@ -64,3 +64,4 @@ def evolution():
 @app.route('/graph', methods=["GET", "POST"])
 def vizCool():
     return app.send_static_file("index.html")
+

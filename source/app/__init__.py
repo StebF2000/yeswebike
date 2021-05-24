@@ -13,4 +13,5 @@ def init_app():
         app = bare_map(app)
         app = centrality_map(app)
 
+
     return app
