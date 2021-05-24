@@ -15,10 +15,10 @@ def myround(x, base=5):
 @ app.route('/')
 def index():
 
-    with open("source/app/data/dashboard_top.json") as json_file:
+    with open("app/data/dashboard_top.json") as json_file:
         data_top = json.load(json_file)
 
-    with open("source/app/data/dashboard_bottom.json") as json_file:
+    with open("app/data/dashboard_bottom.json") as json_file:
         data_bottom = json.load(json_file)
 
         data_bottom = pd.DataFrame.from_dict(
@@ -47,7 +47,7 @@ def index():
 
 @app.route('/maps')
 def centrality():
-    with open("source/app/data/dashboard_top.json") as json_file:
+    with open("app/data/dashboard_top.json") as json_file:
         data_top = json.load(json_file)
 
     return render_template('centrality.html', availabe_mechanical=data_top["AvailableMechanical"],

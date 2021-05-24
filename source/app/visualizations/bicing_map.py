@@ -12,7 +12,11 @@ import pandas.io.sql as sqlio
 
 def read_db(query):
     conn = connect(
-        "host='10.10.10.1' port='5432' dbname='postgres' user='admin' password='admin'")
+        dbname="postgres",
+        user="admin",
+        host="172.28.1.4",
+        password="admin"
+    )
 
     return sqlio.read_sql_query(query, conn)
 

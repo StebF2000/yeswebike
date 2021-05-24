@@ -9,7 +9,7 @@ import dash_core_components as dcc
 
 def centrality_map(server):
 
-    data = pd.read_csv("source/app/data/centrality_bicing.csv")
+    data = pd.read_csv("app/data/centrality_bicing.csv")
 
     fig = px.scatter_mapbox(data, lat="lat", lon="lon", hover_name='address', color="Betweenness Centrality",
                             size='Betweenness Centrality', hover_data={'lat': False, 'lon': False, 'Betweenness Centrality': False},
