@@ -1,26 +1,42 @@
 {
-    "GRAN VIA CORTS CATALANES, 760": [
-        41,
-        2
+    "AV. MERIDIANA, 47 (D)": [
+        38,
+        1
     ],
-    "C/ ARIZALA, 77": [
-        36,
-        0
-    ],
-    "C/ ROCAFORT, 72-74": [
-        35,
-        2
-    ],
-    "C/ CONSELL DE CENT, 566": [
+    "AV. MERIDIANA/PG. FABRA I PUIG (SANT ANDREU)": [
         34,
         1
     ],
-    "RAMBLA DE GUIP\u00daSCOA, 43/FLUVI\u00c0": [
+    "PG. VALL D'HEBR\u00d3N, 168": [
+        47,
+        2
+    ],
+    "GRAN VIA CORTS CATALANES, 760": [
+        42,
+        3
+    ],
+    "CARRER DE LA MARINA,25-33": [
+        37,
+        6
+    ],
+    "PG. LLUIS COMPANYS, 11 (ARC TRIOMF)": [
         33,
+        6
+    ],
+    "GRAN VIA DE LES CORTS CATALANES, 1157 (D)": [
+        43,
         9
     ],
-    "AV. MERIDIANA/PG. FABRA I PUIG (SANT ANDREU)": [
-        33,
-        0
+    "PG. MAR\u00cdTIM NOVA IC\u00c0RIA, 83 (D)": [
+        42,
+        11
+    ],
+    "GRAN  VIA DE LES CORTS CATALANES, 375-385": [
+        36,
+        10
+    ],
+    "AV. LITORAL, 40 (D)": [
+        38,
+        16
     ]
 }

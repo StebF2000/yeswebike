@@ -37,8 +37,6 @@ def index():
         raw_data = [[x, y, z, a]
                     for x, y, z, a in zip(data_bottom["total"], data_bottom["perc"], perc, data_bottom["free"])]
 
-        print()
-
     return render_template('home.html', availabe_mechanical=data_top["AvailableMechanical"],
                            availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
                            active_stations=data_top["ActiveStations"], column_names_bottom=column_names_bottom,
@@ -56,12 +54,37 @@ def centrality():
                            zip=zip)
 
 
+@app.route('/plots')
+def lines():
+    with open("app/data/dashboard_top.json") as json_file:
+        data_top = json.load(json_file)
+
+    return render_template('lines.html', availabe_mechanical=data_top["AvailableMechanical"],
+                           availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
+                           active_stations=data_top["ActiveStations"],
+                           zip=zip)
+
+
 @app.route('/animation')
 def evolution():
     return render_template('animation.html')
+
+
+@app.route('/bikesClass')
+def bikes():
+    return render_template('bikes_per_class.html')
+
+
+@app.route('/size')
+def net_size():
+    return render_template('netSize.html')
 
 
 @app.route('/graph', methods=["GET", "POST"])
 def vizCool():
     return app.send_static_file("index.html")
 
+
+@app.route('/clusterMap')
+def cluster():
+    return render_template('clusters.html')
