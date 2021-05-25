@@ -154,116 +154,140 @@
             <div class="row my-4">
                 <div class="position-relative">
                     <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Bicing Barcelona</h6>
-                                </div>
-                            </div>
+                        <div class="card-header">
+                            <h2>Yes We Bike</h2>
                         </div>
                         <div class="card-body" style="height: auto">
-                            <div class="responsive-iframe">
-                                <iframe src="/dashapp/" style="width: 100%; height: 716px;"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Estaciones más utilizadas</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pb-2">
-                            <div class="table-responsive">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Localización</th>
-
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Slots totales</th>
-
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Slots disponibles</th>
-
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Utilización</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for street, (total, per, bar, free) in zip(column_names_bottom, row_data) %}
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-3 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{ street }}</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-sm font-weight-bold"> {{ total }} </span>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-sm font-weight-bold"> {{ free }} </span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="progress-wrapper w-75 mx-auto">
-                                                    <div class="progress-info">
-                                                        <div class="progress-percentage">
-                                                            <span class="text-xs font-weight-bold">{{ per }}%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped w-{{bar}}"
-                                                            role="progressbar" style="width: 100%" aria-valuenow="10"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+                            <div class="card-text mb-4">
+                                This is a project managed by a group of data engineering students with the main aim of
+                                visualizing Barcelona's public bike service. We are mixing real-time and precomputed
+                                visualizations, Home page is in real time and the remaining are preprocessed.
+                                Our goal is to display helpful data for users and the Administrations so as to increase
+                                the network's performance and efficiency.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer pt-3">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-left">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                Yes We Bike
+        </div>
+        </div>
+        </div>
+        <div class="row my-4">
+            <div class="position-relative">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6>Bicing Barcelona locations</h6>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
-                                </li>
-                            </ul>
+                    </div>
+                    <div class="card-body" style="height: auto">
+                        <div class="card-description mb-4">The aim of this visualization is to show all the current
+                            locations of Bicing stations in Barcelona using an interactive map.</div>
+                        <div class="responsive-iframe">
+                            <iframe src="/dashapp/" style="width: 100%; height: 716px;"></iframe>
+                        </div>
+                        <div class="card-description">As can be seen, each scatter shown over the map represent the
+                            location of
+                            each station. Hovering over any point will lead you to see its address.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6>Top 10 most used stations</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Address</th>
+
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Total slots</th>
+
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Available slots</th>
+
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Usage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for street, (total, per, bar, free) in zip(column_names_bottom, row_data) %}
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-3 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{ street }}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-sm font-weight-bold"> {{ total }} </span>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-sm font-weight-bold"> {{ free }} </span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-info">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">{{ per }}%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-striped w-{{bar}}"
+                                                        role="progressbar" style="width: 100%" aria-valuenow="10"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </div>
+        <footer class="footer pt-3">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-left">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>,
+                            Yes We Bike
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
+                                    target="_blank">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
         </div>
     </main>
 

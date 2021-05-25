@@ -37,8 +37,6 @@ def index():
         raw_data = [[x, y, z, a]
                     for x, y, z, a in zip(data_bottom["total"], data_bottom["perc"], perc, data_bottom["free"])]
 
-        print()
-
     return render_template('home.html', availabe_mechanical=data_top["AvailableMechanical"],
                            availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
                            active_stations=data_top["ActiveStations"], column_names_bottom=column_names_bottom,
@@ -51,6 +49,17 @@ def centrality():
         data_top = json.load(json_file)
 
     return render_template('centrality.html', availabe_mechanical=data_top["AvailableMechanical"],
+                           availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
+                           active_stations=data_top["ActiveStations"],
+                           zip=zip)
+
+
+@app.route('/plots')
+def lines():
+    with open("app/data/dashboard_top.json") as json_file:
+        data_top = json.load(json_file)
+
+    return render_template('lines.html', availabe_mechanical=data_top["AvailableMechanical"],
                            availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
                            active_stations=data_top["ActiveStations"],
                            zip=zip)
@@ -76,12 +85,6 @@ def vizCool():
     return app.send_static_file("index.html")
 
 
-@app.route('/plots')
-def lines():
-    with open("app/data/dashboard_top.json") as json_file:
-        data_top = json.load(json_file)
-
-    return render_template('lines.html', availabe_mechanical=data_top["AvailableMechanical"],
-                           availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
-                           active_stations=data_top["ActiveStations"],
-                           zip=zip)
+@app.route('/clusterMap')
+def cluster():
+    return render_template('clusters.html')
