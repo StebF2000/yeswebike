@@ -1,7 +1,5 @@
 import plotly.express as px
 import pandas as pd
-import json
-
 
 from dash import Dash
 import dash_html_components as html

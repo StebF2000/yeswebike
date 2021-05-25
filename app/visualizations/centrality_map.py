@@ -25,6 +25,3 @@ def centrality_map(server):
         id='centrality', children=[dcc.Graph(figure=fig)])
 
     return dash_app.server
-
-
-print(px.colors.carto.Burg)
