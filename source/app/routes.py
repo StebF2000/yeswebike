@@ -61,7 +61,27 @@ def evolution():
     return render_template('animation.html')
 
 
+@app.route('/bikesClass')
+def bikes():
+    return render_template('bikes_per_class.html')
+
+
+@app.route('/size')
+def net_size():
+    return render_template('netSize.html')
+
+
 @app.route('/graph', methods=["GET", "POST"])
 def vizCool():
     return app.send_static_file("index.html")
 
+
+@app.route('/plots')
+def lines():
+    with open("app/data/dashboard_top.json") as json_file:
+        data_top = json.load(json_file)
+
+    return render_template('lines.html', availabe_mechanical=data_top["AvailableMechanical"],
+                           availabe_electrical=data_top["AvailableElectric"], active_bikes=data_top["ActiveBikes"],
+                           active_stations=data_top["ActiveStations"],
+                           zip=zip)
