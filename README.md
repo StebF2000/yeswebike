@@ -6,9 +6,15 @@ We are using [plotly](https://plotly.com/) for our visualizations and the [Flask
 
 For our UI we are using the [Soft UI Dasboard](https://www.creative-tim.com/product/soft-ui-dashboard) based on Bootstrap 4 from Creative Tim.
 
-## How to 
-In order to execute correctly you will need [Docker](https://www.docker.com/) and [Docker-compose](https://docs.docker.com/compose/) installed in your system. Afterwards you should execute the following command on your terminal.
+## Data
+In order to get all the needed files you must execute the following command.
 ```bash
-cd docker && docker-compose up
+bash fetch_data.sh
+```
+
+## How to 
+In order to execute correctly this app you will need [Docker](https://www.docker.com/) and [Docker-compose](https://docs.docker.com/compose/) installed in your system. Afterwards you should execute the following command on your terminal.
+```bash
+cd source/docker && docker-compose up
 ```
 This docker-compose will create the app image and get from docker-hub the latest postgres image for the database, insert all required data and start up the app. It is accessible through the port `8000` in your `localhost`.

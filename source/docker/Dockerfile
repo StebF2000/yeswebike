@@ -11,5 +11,7 @@ COPY wsgi.py /
 COPY get_data_on_time.py /
 
 # Wait DB
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.2/wait /wait
-RUN chmod +x /wait
+ENV WAIT_FOR_VERSION=v0.0.3
+RUN wget "https://github.com/ArcanjoQueiroz/wait-for/releases/download/${WAIT_FOR_VERSION}/wait-for" && chmod u+x wait-for
+
+CMD [ "conda", "run", "-n", "yeswebike", "python", "wsgi.py", "&&", "conda", "run", "-n", "yeswebike", "python", "get_data_on_time.py" ]
