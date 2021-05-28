@@ -88,3 +88,8 @@ def vizCool():
 @app.route('/clusterMap')
 def cluster():
     return render_template('clusters.html')
+
+
+@app.route('/time')
+def stations_time():
+    return render_template('new_stations_along_time.html')

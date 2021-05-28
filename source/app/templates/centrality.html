@@ -158,57 +158,81 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-lg-6 col-7">
-                                    <h6>Stations centrality</h6>
-                                </div>
-                            </div>
-                            Las estaciones hacemos cosas con
-                        </div>
-                        <div class="card-body" style="height: fit-content">
-                            <div class="responsive-iframe">
-                                <iframe src="/centralityMap/" style="width: 100%; height: 716px;"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="position-relative">
-                    <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
                                     <h6>Availablility evolution</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body" style="height: fit-content">
+                            <div class="card-description">
+                                Number of available bikes for each station during the fiveteen first days of
+                                2021. The size and color of each scatter correlates to the number of bikes available
+                                in each station. <br>The bigger and darker the point gets, the more bikes are available.
+                            </div>
                             <div class="responsive-iframe">
                                 <iframe src="{{ url_for('evolution') }}" style="width: 100%; height: 716px;"></iframe>
                             </div>
+                            <div class="card-description">This animation shows us how the population comutes from the
+                                residentials to the financials areas of Barcelona.</div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="row my-4">
                 <div class="position-relative">
                     <div class="card">
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-lg-6 col-7">
-                                    <h6>Availablility evolution</h6>
+                                    <h6>Bicing network</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body" style="height: fit-content">
+                            <div class="card-description">This graph represents the network of Bicing stations based on
+                                mutual nearest neighbourhood, it is interactive and the user can look for any station
+                                and get information about it and its neighbourhood. This can be done through the search
+                                bar or by clicking on the nodes. There is also available a grouping tool based on graph
+                                modularity partition.</div>
                             <div class="responsive-iframe">
                                 <iframe src="{{ url_for('vizCool') }}" style="width: 100%; height: 716px;"></iframe>
+                            </div>
+                            <div class="card-description">From this graph we can extrapolate the existance of eighteen
+                                unique classes or <i>clusters</i>. It can also be seen that there are certain nodes with
+                                high betweeness centrality, this information can be translated as the most centrical
+                                positions, the better connected ones.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="row my-4">
+                <div class="position-relative">
+                    <div class="card">
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-7">
+                                    <h6>Stations centrality</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="height: fit-content">
+                            <div class="card-description">On this map we can see the betweeness centrality of all
+                                stations represented by its size and color. The bigger and darker a node gets, the more
+                                centrality it has. The betweness centrality is the ratio between all possible shortest
+                                paths of two nodes such that another one is on this path and all shortest paths between
+                                both nodes (most centered nodes).</div>
+                            <div class="responsive-iframe">
+                                <iframe src="/centralityMap/" style="width: 100%; height: 716px;"></iframe>
+                            </div>
+                            <div class="card-description">This map shows us that <i>Provença</i>, <i>Còrsega</i> and
+                                <i>Passeig de Gracia</i> are the central stations of the network, all located in the
+                                financial district of Barcelona. <br> This information has been obtained from the
+                                previous graph.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row my-4">
                 <div class="position-relative">
                     <div class="card">
@@ -220,9 +244,14 @@
                             </div>
                         </div>
                         <div class="card-body" style="height: fit-content">
+                            <div class="card-description">Based on the modularity partition of the network previously
+                                displayed, we have performed convex hull for each class.</div>
                             <div class="responsive-iframe">
                                 <iframe src="{{ url_for('cluster') }}" style="width: 100%; height: 716px;"></iframe>
                             </div>
+                            <div class="card-description">This map shows us that each modularity partition class suites
+                                the layout of a district of Barcelona. We can confirm that all stations are
+                                evenly distributed to fulfill the layout of the city.</div>
                         </div>
                     </div>
                 </div>

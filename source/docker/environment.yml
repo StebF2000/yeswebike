@@ -2,6 +2,7 @@ name: yeswebike
 channels:
   - nodefaults
   - conda-forge
+  - anaconda
 dependencies:
   - pandas
   - flask
@@ -12,3 +13,5 @@ dependencies:
   - dash-bootstrap-components
   - numpy
   - psycopg2
+  - seaborn
+  - basemap 
