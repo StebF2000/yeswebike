@@ -162,31 +162,46 @@
                             </div>
                         </div>
                         <div class="card-body" style="height: fit-content" onclick="window.open('/size')">
+                            <div class="card-description">The evolution of the number of stations can be seen below
+                                grouped by year of installation. The ones present in 2019 are the base line presented by
+                                the data over witch can be seen how much the network has grown between 2020 and 2021.
+                            </div>
                             <div class="responsive-iframe">
                                 <iframe src="{{ url_for('stations_time') }}"
                                     style="width: 100%; height: 716px;"></iframe>
                             </div>
                             <img class="card-img" src="../static/img/fig2.svg" style="height: 716px;">
+                            <div class="card-description">These plots show how the network has grown over the
+                                residential areas during 2020 due to the increasing on demand this service has
+                                suffer, this tendency continues in 2021.</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row my-4">
-                <div class="position-relative">
-                    <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Bikes aviability</h6>
-                                </div>
+        </div>
+        <div class="row my-4">
+            <div class="position-relative">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6>Bikes aviability</h6>
                             </div>
                         </div>
-                        <div class="card-body" style="height: fit-content" onclick="window.open('/bikesClass')">
-                            <img class="card-img" src="../static/img/fig1.svg" style="height: 716px;">
+                    </div>
+                    <div class="card-body" style="height: fit-content" onclick="window.open('/bikesClass')">
+                        <div class="card-description">This plot displays the number of available bikes per month grouped
+                            by cluster (<i>district</i>). The lower the figure of available bikes, the higher is the
+                            usage of Bicing in each district.
                         </div>
+                        <img class="card-img" src="../static/img/fig1.svg" style="height: 716px;">
+                        <div class="card-description">There is a period of almost two months were there are no
+                            available bikes, this is due to the first lock-down caused by the COVID-19 pandemic. During
+                            the later months, the usage has returned to pre-pandemic levels.</div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <footer class="footer pt-3">
             <div class="container-fluid">
@@ -199,14 +214,6 @@
                             </script>,
                             Yes We Bike
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                    target="_blank">About Us</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
